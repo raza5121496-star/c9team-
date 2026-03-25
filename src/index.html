@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C9 TEAM Official Game Store 🏴‍☠️</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+    font-family:'Segoe UI',sans-serif;
+    background: radial-gradient(circle at top, #000000, #001f1f);
+    color:#fff;
+}
+
+/* NAVBAR */
+nav{
+    display:flex;
+    justify-content:space-between;
+    padding:20px 50px;
+    background:#000;
+    border-bottom:2px solid #00ffff;
+    box-shadow:0 0 20px #00ffff;
+}
+nav h1{
+    color:#00ffff;
+    text-shadow:0 0 15px #00ffff;
+}
+nav a{
+    color:#fff;
+    margin-left:20px;
+    text-decoration:none;
+    font-weight:bold;
+}
+nav a:hover{
+    color:#00ffcc;
+}
+
+/* HERO */
+.hero{
+    text-align:center;
+    padding:80px 20px;
+}
+.hero h2{
+    font-size:42px;
+    color:#00ffff;
+    text-shadow:0 0 20px #00ffff;
+}
+.hero p{
+    margin:15px 0;
+    color:#aaa;
+    font-size:18px;
+}
+
+/* INPUT & BUTTON */
+.input-box{
+    margin-top:20px;
+}
+input{
+    padding:12px;
+    width:250px;
+    background:#111;
+    border:none;
+    border-radius:5px;
+    color:#00ffff;
+    outline:none;
+    box-shadow:0 0 15px #00ffff;
+}
+.btn{
+    padding:12px 30px;
+    margin-top:15px;
+    background:#00ffff;
+    color:black;
+    border:none;
+    border-radius:5px;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:0 0 20px #00ffff;
+    transition:0.3s;
+}
+.btn:hover{
+    background:#00cc99;
+    box-shadow:0 0 30px #00ffcc;
+}
+
+/* SECTIONS */
+.section{
+    padding:60px 20px;
+    text-align:center;
+}
+.cards{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+.card{
+    background:#111;
+    width:260px;
+    margin:15px;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 0 20px rgba(0,255,255,0.4);
+    transition:0.3s;
+}
+.card:hover{
+    transform:scale(1.05);
+}
+.card h3{
+    color:#00ffff;
+    margin-bottom:10px;
+}
+.price{
+    color:#00ffcc;
+    font-size:20px;
+    font-weight:bold;
+}
+.feature{
+    width:250px;
+    margin:10px;
+    padding:15px;
+    background:#111;
+    border-radius:10px;
+    box-shadow:0 0 15px #00ffff;
+}
+
+/* COMING SOON */
+.coming{
+    background:#000;
+    padding:50px 20px;
+}
+.coming p{
+    margin:10px 0;
+    color:#00ffcc;
+    font-weight:bold;
+}
+
+/* STATUS BOX */
+.status{
+    display:none;
+    margin-top:20px;
+    padding:15px;
+    border-radius:8px;
+    background:#111;
+    box-shadow:0 0 15px #00ffff;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:25px;
+    border-top:2px solid #00ffff;
+    color:#aaa;
+    font-size:14px;
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <h1>🏴‍☠️ C9 TEAM STORE</h1>
+    <div>
+        <a href="#">Home</a>
+        <a href="#">Yalla Ludo</a>
+        <a href="#">VIP</a>
+        <a href="#">Updates</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <h2>💎 Yalla Ludo Diamond Store</h2>
+    <p>Official se thoda sasta • Fast delivery • Secure payment</p>
+
+    <div class="input-box">
+        <input type="text" id="userId" placeholder="Enter Your Game ID">
+    </div>
+    <br>
+    <a href="https://easypaisa.com/pay/YOUR_LINK" target="_blank">
+        <button class="btn" onclick="buyNow()">💳 Buy Now</button>
+    </a>
+
+    <div class="status" id="statusBox">⏳ Processing Payment...</div>
+    <div class="status" id="successBox">🎉 Diamonds Credited Successfully!</div>
+</section>
+
+<!-- SMALL DEALS -->
+<section class="section">
+    <h2>💎 Small & Medium Diamond Deals</h2>
+    <div class="cards">
+        <div class="card"><h3>100 Diamonds</h3><p class="price">PKR 260</p></div>
+        <div class="card"><h3>500 Diamonds</h3><p class="price">PKR 1200</p></div>
+        <div class="card"><h3>1000 Diamonds</h3><p class="price">PKR 2300</p></div>
+        <div class="card"><h3>2000 Diamonds</h3><p class="price">PKR 4400</p></div>
+    </div>
+</section>
+
+<!-- BIG DEALS -->
+<section class="section">
+    <h2>🔥 Mega / Ultra / King Deals</h2>
+    <div class="cards">
+        <div class="card"><h3>🔥 Mega Pack</h3><p>5000 Diamonds</p><p class="price">PKR 10,500</p></div>
+        <div class="card"><h3>🚀 Ultra Pack</h3><p>10000 Diamonds</p><p class="price">PKR 19,500</p></div>
+        <div class="card"><h3>👑 King Pack</h3><p>20000 Diamonds</p><p class="price">PKR 37,000</p></div>
+    </div>
+</section>
+
+<!-- VIP SECTION -->
+<section class="section">
+    <h2>👑 VIP Membership</h2>
+    <div class="cards">
+        <div class="card"><h3>Basic VIP</h3><p>Extra rewards + priority</p><p class="price">PKR 1300</p></div>
+        <div class="card"><h3>Pro VIP</h3><p>Faster delivery + bonus diamonds</p><p class="price">PKR 2600</p></div>
+        <div class="card"><h3>Elite VIP</h3><p>Full access + unlimited perks</p><p class="price">PKR 4500</p></div>
+    </div>
+</section>
+
+<!-- COMING SOON -->
+<section class="coming">
+    <h2>🆕 Coming Soon</h2>
+    <p>🔥 Auto Diamond Delivery System</p>
+    <p>🔥 More Game Integrations</p>
+    <p>🔥 Live Dashboard & Tracking</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    © 2026 C9 TEAM 🏴‍☠️ | Owner: Professor Rehan | All Rights Reserved
+</footer>
+
+<script>
+function buyNow(){
+    let id=document.getElementById("userId").value;
+    if(id===""){alert("⚠️ Enter your Game ID first!"); return;}
+    document.getElementById("statusBox").style.display="block";
+    setTimeout(()=>{
+        document.getElementById("statusBox").style.display="none";
+        document.getElementById("successBox").style.display="block";
+    },4000);
+}
+</script>
+
+</body>
+</html><section class="section">
+    <h2>🎫 C9 TEAM Official Deals</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>💎 Starter Deal</h3>
+            <p>5,000 Diamonds</p>
+            <p class="price">PKR 2,000</p>
+            <p style="color:#00ffcc;">✔ Best Entry Deal</p>
+        </div>
+
+        <div class="card">
+            <h3>💎 Silver Deal</h3>
+            <p>7,000 Diamonds</p>
+            <p class="price">PKR 4,000</p>
+        </div>
+
+        <div class="card">
+            <h3>💎 Gold Deal</h3>
+            <p>10,000 Diamonds</p>
+            <p class="price">PKR 6,000</p>
+            <p style="color:#00ffcc;">🔥 Most Popular</p>
+        </div>
+
+        <div class="card">
+            <h3>💎 Platinum Deal</h3>
+            <p>16,000 Diamonds</p>
+            <p class="price">PKR 8,000</p>
+        </div>
+
+        <div class="card">
+            <h3>💎 Diamond Deal</h3>
+            <p>32,000 Diamonds</p>
+            <p class="price">PKR 10,000</p>
+            <p style="color:#00ffcc;">🚀 Best Value</p>
+        </div>
+
+        <div class="card">
+            <h3>👑 King Deal</h3>
+            <p>53,000 Diamonds</p>
+            <p class="price">PKR 20,000</p>
+        </div>
+
+    </div>
+</section>
